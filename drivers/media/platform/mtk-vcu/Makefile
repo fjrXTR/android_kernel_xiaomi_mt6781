@@ -4,10 +4,19 @@ ccflags-y += -I$(srctree)/drivers/misc/mediatek/cmdq
 mtk-vcu-y += mtk_vcu.o \
 	mtk_vcodec_mem.o \
 
-obj-$(CONFIG_VIDEO_MEDIATEK_VCU) += mtk-vcu.o mtk_vcodec_mem.o
+obj-$(CONFIG_VIDEO_MEDIATEK_VCU) += mtk-vcu.o
 ccflags-y += -I$(srctree)/arch/arm
 ccflags-y += -I$(srctree)/drivers/misc/mediatek/include/mt-plat
 
+ifeq (y, $(filter y, $(CONFIG_MACH_MT6893)))
+MTK_PLATFORM := mt6885
+endif
+ifeq (y, $(filter y, $(CONFIG_MACH_MT6833)))
+MTK_PLATFORM := mt6833
+endif
+ifeq (y, $(filter y, $(CONFIG_MACH_MT6877)))
+MTK_PLATFORM := mt6877
+endif
 ifeq (y, $(filter y, $(CONFIG_MACH_MT6781)))
 MTK_PLATFORM := mt6781
 endif

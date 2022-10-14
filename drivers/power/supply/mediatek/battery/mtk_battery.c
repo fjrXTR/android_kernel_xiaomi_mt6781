@@ -512,7 +512,7 @@ static int mtk_get_prop_soc_decimal(int *val)
 	return 0;
 }
 
-int get_charger_pump_temp()
+int get_charger_pump_temp(void)
 {
 	int ret;
 	union power_supply_propval val = {0,};
