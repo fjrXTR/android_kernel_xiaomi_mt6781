@@ -23,8 +23,8 @@ ifeq ($(CONFIG_MACH_MT6781),y)
 MTK_DERIVED_PLATFORM := mt6781
 endif
 
-ifeq ($(MTK_PROJECT),$(filter $(MTK_PROJECT),viva vida))
-CONFIG_MTK_PLATFORM_SENSOR := viva
+ifeq ($(MTK_PROJECT),$(filter $(MTK_PROJECT),fleur miel))
+CONFIG_MTK_PLATFORM_SENSOR := fleur
 else
 ifeq ($(CONFIG_MACH_MT6781),y)
 CONFIG_MTK_PLATFORM_SENSOR := mt6853

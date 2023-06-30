@@ -205,6 +205,17 @@
 		compatible = "ti,bq27z561";
 		reg = <0x55>;
 	};
+	pn557: pn557@28 {
+		compatible = "nxp,pn557";
+		reg = <0x28>;
+		nxp,pn557-ven = <&pio 8 0>; //nfc_enable
+		nxp,pn557-fw-dwnld = <&pio 76 0>; //NFC_DWL_REQ
+		nxp,pn557-clkreq = <&pio 82 0>; //NFC_ClkReq
+		nxp,pn557-irq = <&pio 5 0>;  //nfc_irq
+		interrupt-parent = <&pio>;
+		interrupts = <5 IRQ_TYPE_LEVEL_LOW>;
+		status = "okay";
+	};
 };
 
 &i2c7 {
@@ -694,7 +705,8 @@
 	status = "okay";
 };
 /*fingerprint end*/
-#include <vida/cust.dtsi>
+
+#include <fleur/cust.dtsi>
 #include "mediatek/cust_mt6781_camera.dtsi"
 #include "mediatek/cust_mt6781_touch_gt9896_1080x2400.dtsi"
 /*End of this file, DO NOT ADD ANYTHING HERE*/
