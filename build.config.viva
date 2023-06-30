@@ -1,0 +1,16 @@
+. ${ROOT_DIR}/${KERNEL_DIR}/build.config.common
+. ${ROOT_DIR}/${KERNEL_DIR}/build.config.aarch64
+
+DEFCONFIG="viva_defconfig"
+KERNEL_DIR="viva-kernel"
+
+FILES="
+arch/arm64/boot/Image.gz
+arch/arm64/boot/dts/mediatek/mt6781.dtb
+"
+
+# Strip kernel modules
+DO_NOT_STRIP_MODULES=0
+
+MAKE_GOALS="${MAKE_GOALS} Image.gz dtbs modules"
+
