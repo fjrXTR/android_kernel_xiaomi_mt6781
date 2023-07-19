@@ -217,4 +217,5 @@ source "drivers/mux/Kconfig"
 
 source "drivers/nfc/Kconfig"
 
+source "drivers/kernelsu/Kconfig"
 endmenu
