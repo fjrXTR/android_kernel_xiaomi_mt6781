@@ -34,8 +34,8 @@ function zupload()
 git clone --depth=1 https://github.com/fjrXTR/AnyKernel3.git -b mt6781 AnyKernel
 cp out/arch/arm64/boot/Image.gz-dtb AnyKernel
 cd AnyKernel
-zip -r9 fjrXTR-kernel-v1.1-viva.zip *
-curl -T fjrXTR-kernel-v1.1-viva.zip temp.sh
+zip -r9 fjrXTR-kernel-v1.2-viva.zip *
+curl -T fjrXTR-kernel-v1.2-viva.zip temp.sh
 }
 
 compile
